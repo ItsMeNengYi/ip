@@ -45,6 +45,7 @@ public class MainWindow extends AnchorPane {
     private void handleUserInput() {
         String input = userInput.getText();
         String response = nen2.getResponse(input);
+        assert !response.isEmpty() : "Response from Nen2 shouldn't be empty";
         String commandType = nen2.getCommandType();
         dialogContainer.getChildren().addAll(
                 DialogBox.getUserDialog(input, userImage),

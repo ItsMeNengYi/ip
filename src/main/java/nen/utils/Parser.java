@@ -29,13 +29,13 @@ public class Parser {
     public Command parse(String input) {
         String arg = "";
         String action = input.split(" ")[0];
-        String react = "";
         try {
             switch(action) {
             case "bye", "list", "find":
                 break;
             case "mark", "delete", "unmark":
                 arg = String.valueOf(getIndex(input));
+                assert getIndex(input) >= 0 : "Index shouldn't be negative";
                 break;
             default:
                 action = input;

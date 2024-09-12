@@ -56,6 +56,7 @@ public class Nen2 {
      */
     public String getResponse(String text) {
         Command c = parser.parse(text);
+        assert c != null : "Parsed command shouldn't be null";
         c.execute(tasks);
         commandType = c.getName();
         return c.getDescription();
